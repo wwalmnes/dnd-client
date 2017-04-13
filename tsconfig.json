@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "jsx": "react",
+        "outDir": "dist",
+        "types": [ "whatwg-fetch" ],
+        "typeRoots": [ "node_modules/@types/" ],
+        "baseUrl": "./",
+        "paths": {
+            "actions": ["src/actions"],
+            "components": ["src/components"],
+            "containers": ["src/containers"],
+            "middleware": ["src/middleware"],
+            "reducers": ["src/reducers"],
+            "store": ["src/store"],
+            "templates": ["src/templates"]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

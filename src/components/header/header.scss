@@ -1,0 +1,89 @@
+@import '../../styles/vars.scss';
+nav.navigation {
+    background-color: #2F4050;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $menu-height;
+    margin: 0;
+    padding: 0 $global-padding;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    header {
+        width: 120px;
+        h1 {
+            color: #fff;
+            margin: 0;
+        }
+    }
+
+    .navigation-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+        list-style: none;
+        height: 100%;
+        padding: 0;
+
+        
+        li {
+            display: inline-block;
+            height: 100%;
+            text-align: center;
+            // padding: 1.3rem 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease-out;
+
+
+            // &:hover, &.current {
+            //     background-color: #293846;
+            //     a, a:hover, a:focus {
+            //         color: #fff;
+            //     }
+            //     .item-text {
+            //         font-weight: 700;
+            //     }
+            // }
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: column;
+                height: 100%;
+                padding: 0 1rem;
+                text-decoration: none;
+                color: #ccc;
+                transition: color 0.3s ease-out;
+
+                &:hover,
+                &:focus,
+                &.is-active {
+                    text-decoration: none;
+                    background-color: #293846;
+                    font-weight: 700;
+                    color: #fff;
+                }
+                
+                span {
+                    display: block;
+                }
+                .item-icon {
+                    font-size: 2.4rem;
+                    margin-bottom: 0.5rem;
+                }
+                .item-text {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import '../../styles/vars.scss';
+
+.pagination {
+	display: flex;
+	flex-flow: row;
+	margin: $spacing-medium 0;
+
+	.pagination-input-container {
+		margin: 0 $spacing-medium;
+	}
+}

@@ -1,0 +1,14 @@
+@import '../../styles/vars.scss';
+
+.spells-container, .spell-container {
+	// display: flex;
+	// flex-flow: row wrap;
+	// justify-content: flex-start;
+	padding: $spacing-xxlarge $global-padding;
+}
+
+.spell-container {
+	.description {
+		margin: $spacing-medium 0;
+	}
+}
