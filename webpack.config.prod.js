@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/dist/'
   },
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.ts', '.tsx', '.scss']
@@ -40,7 +40,7 @@ module.exports = {
               'css!sass')
     },
       {
-      test: /\.ts(x?)$/,
+      test: /\.tsx?$/,
       loaders: ['babel', 'ts-loader'],
       include: path.join(__dirname, 'src')
     }]

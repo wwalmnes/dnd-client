@@ -7,7 +7,7 @@
         "sourceMap": true,
         "jsx": "react",
         "outDir": "dist",
-        "types": [ "whatwg-fetch" ],
+        "types": [ "whatwg-fetch", "node" ],
         "typeRoots": [ "node_modules/@types/" ],
         "baseUrl": "./",
         "paths": {

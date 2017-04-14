@@ -1,6 +1,6 @@
 
 let tmpApiRoot = null;
-declare var process;
+console.log('NODE ENV: ', process);
 if (process.env.NODE_ENV === 'production') {
 	tmpApiRoot = 'http://176.58.120.98:3000/api/';
 } else {

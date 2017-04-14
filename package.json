@@ -11,7 +11,8 @@
     "prebuild": "typings install",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
-    "start": "node devServer.js",
+    "postinstall": "npm run build",
+    "start": "node server.js",
     "lint": "eslint src",
     "test": "./node_modules/mocha/bin/mocha setup.js tests.js"
   },
@@ -25,11 +26,10 @@
     "url": "https://wwalmnes@bitbucket.org/wwalmnes/mydnd-client.git"
   },
   "author": "William Almnes",
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "dependencies": {
     "@types/d3": "^3.5.36",
+    "@types/node": "^7.0.12",
     "@types/react": "^0.14.37",
     "@types/react-dom": "^0.14.17",
     "@types/react-redux": "^4.4.32",
