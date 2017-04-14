@@ -8,7 +8,6 @@
   "description": "A manager for all DND stuff.",
   "scripts": {
     "clean": "rimraf dist",
-    "prebuild": "typings install",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "postinstall": "npm run build",
