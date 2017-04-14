@@ -1,5 +1,5 @@
 import { ISpell, IPSpells } from '../components/spells/ispells';
-import { CALL_API } from '../middleware/api';
+import { CALL_API, BASE_URL } from '../middleware/api';
 
 export const SPELLS_REQUEST = 'SPELLS_REQUEST';
 export const SPELLS_SUCCESS = 'SPELLS_SUCCESS';
@@ -14,7 +14,6 @@ export const SPELL_EDIT_SUCCESS = 'SPELL_EDIT_SUCCESS';
 export const SPELL_EDIT_FAILURE = 'SPELL_EDIT_FAILURE';
 export const SET_SPELL_EDIT_VALUE = 'SET_SPELL_EDIT_VALUE';
 
-const BASE_URL = 'http://localhost:3000/api/';
 export function fetchSpells(query, skip, take) {
 	return {
 		[CALL_API]: {

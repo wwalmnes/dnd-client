@@ -1,6 +1,14 @@
 
-const BASE_URL = 'http://localhost:3000/api/';
-declare var $;
+let tmpApiRoot = null;
+declare var process;
+if (process.env.NODE_ENV === 'production') {
+	tmpApiRoot = 'http://176.58.120.98:3000/api/';
+} else {
+	tmpApiRoot = 'http://localhost:3000/api/';
+}
+
+export const BASE_URL = tmpApiRoot;
+
 function callApi(endpoint, authenticated) {
 	let token = localStorage.getItem('id_token') || null;
 	let config:any = {};
@@ -8,7 +16,6 @@ function callApi(endpoint, authenticated) {
 	
 	if (authenticated) {
 		if (token) {
-			console.log('headers append: ');
 			headers.append('Authorization', token);
 			config = {
 				headers: {
@@ -16,28 +23,9 @@ function callApi(endpoint, authenticated) {
 				},
 				credentials: 'same-origin' // 'same-origin'
 			};
-		} else {
-			//throw 'No token saved';
 		}
 	}
 
-	//console.log('Setting headers: ', authenticated, token, config.headers.has('Authorization'));
-	console.log('values: ', config);
-	/*return $.ajax({
-		type: "GET",
-		"crossDomain": true,
-		url: BASE_URL + endpoint,
-		dataType: 'json',
-		async: false,
-		headers: {
-			"authorization": token,
-			"cache-control": "no-cache",
-		},
-		success: function (data){
-			console.log('data: ', data);
-			return data;
-		}
-	});*/
 	return fetch(BASE_URL + endpoint, config).then((response) => {
 		return response.json().then((data) => {
 			return {data, response};
